@@ -16,6 +16,9 @@ class Animal
     public function index()
     {
         # gunakan foreach untuk menampilkan data animals (array)
+        foreach ($this->animals as $animal){
+            echo "$animal<br>";
+        }
         return $this->animals;
     }
 
@@ -24,13 +27,18 @@ class Animal
     public function store($data)
     {
         # gunakan method array_push untuk menambahkan data baru
-        $this->animals=$data;
+        array_push($this->animals, $data);
+        return $this;
     }
+    
 
     # method update - mengupdate hewan
     # parameter: index dan hewan baru
     public function update($index, $data)
     {
+        # gunakan method array_splice untuk mengupdate data array
+        array_splice($this->animals, $index, 1, $data);
+        return $this;
     }
 
     # method delete - menghapus hewan
@@ -38,6 +46,8 @@ class Animal
     public function destroy($index)
     {
         # gunakan method unset atau array_splice untuk menghapus data array
+        array_splice($this->animals, $index, 1);
+        
     }
 }
 
