@@ -3,29 +3,28 @@
 # membuat class Animal
 class Animal
 {
-    public $data;
-    public $index;
-    
-
+    # property animals
+    public $animals;
     # method constructor - mengisi data awal
     # parameter: data hewan (array)
-    public function __construct($data,$index)
+    public function __construct($data)
     {
-        $this->data = $data;
+        $this->animals = $data;
     }
 
     # method index - menampilkan data animals
-    
     public function index()
     {
-        return $this->index;
+        # gunakan foreach untuk menampilkan data animals (array)
+        return $this->animals;
     }
 
     # method store - menambahkan hewan baru
     # parameter: hewan baru
     public function store($data)
     {
-        $this->data=$data;
+        # gunakan method array_push untuk menambahkan data baru
+        $this->animals=$data;
     }
 
     # method update - mengupdate hewan
@@ -44,7 +43,7 @@ class Animal
 
 # membuat object
 # kirimkan data hewan (array) ke constructor
-$animal = new Animal([]);
+$animal = new Animal(["Ayam", "Ikan"]);
 
 echo "Index - Menampilkan seluruh hewan <br>";
 $animal->index("Ayam","ikan");
