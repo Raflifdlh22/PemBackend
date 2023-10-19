@@ -36,8 +36,7 @@ class Animal
     # parameter: index dan hewan baru
     public function update($index, $data)
     {
-        # gunakan method array_splice untuk mengupdate data array
-        array_splice($this->animals, $index, 1, $data);
+        $this->animals[$index]=$data;   
         return $this;
     }
 
@@ -47,7 +46,7 @@ class Animal
     {
         # gunakan method unset atau array_splice untuk menghapus data array
         array_splice($this->animals, $index, 1);
-        
+        return $this;
     }
 }
 
