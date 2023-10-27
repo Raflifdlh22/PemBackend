@@ -3,7 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AnimalController;
-
+use APP\Http\Controllers\StudentController;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -30,3 +30,6 @@ Route::put('/animals/{id}', [AnimalController::class, "update"]);
 
 // Route untuk menghapus hewan
 Route::delete('/animals/{id}', [AnimalController::class, "destroy"]);
+
+// Route untuk menampilkan seluruh semua students
+Route::get('/students', [StudentController::class, 'index']);
