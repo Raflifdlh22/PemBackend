@@ -51,7 +51,6 @@ class StudentsController extends Controller
 
     public function store(Request $request)
     {
-
         // validasi data request
         $request->validate([
             'nama' => 'required',
