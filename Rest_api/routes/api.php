@@ -3,7 +3,8 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AnimalController;
-use APP\Http\Controllers\StudentController;
+use App\Http\Controllers\StudentsController;
+
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -32,17 +33,26 @@ Route::put('/animals/{id}', [AnimalController::class, "update"]);
 Route::delete('/animals/{id}', [AnimalController::class, "destroy"]);
 
 // Route untuk menampilkan seluruh semua students
-Route::get('/students', [StudentController::class, 'index']);
+Route::get('/students', [StudentsController::class, 'index']);
 
 // Route untuk menambahkan students
-Route::post('/students', [StudentController::class, 'store']);
+Route::post('/students', [StudentsController::class, 'store']);
 
 // Route untuk mengedit students
-Route::put('/students/{id}', [StudentController::class, 'update']);
+Route::put('/students/{id}', [StudentsController::class, 'update']);
 
 // Route untuk menghapus students
 
-Route::delete('/students/{id}', [StudentController::class, 'destroy']);
+Route::delete('/students/{id}', [StudentsController::class, 'destroy']);
 
 // Route untuk menampilkan seluruh semua students
-Route::get('/students{id}', [StudentController::class, 'show']);
+Route::get('/students{id}', [StudentsController::class, 'show']);
+
+// Route untuk update students
+Route::put('/students/{id}', [StudentsController::class, 'update']);
+
+// Route untuk menambah students
+Route::post('/students', [StudentsController::class, 'store']);
+
+// Route untuk untuk mendapatkan detail student
+Route::get('/students/{id}', [StudentsController::class, 'show']);
