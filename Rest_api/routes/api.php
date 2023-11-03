@@ -33,3 +33,16 @@ Route::delete('/animals/{id}', [AnimalController::class, "destroy"]);
 
 // Route untuk menampilkan seluruh semua students
 Route::get('/students', [StudentController::class, 'index']);
+
+// Route untuk menambahkan students
+Route::post('/students', [StudentController::class, 'store']);
+
+// Route untuk mengedit students
+Route::put('/students/{id}', [StudentController::class, 'update']);
+
+// Route untuk menghapus students
+
+Route::delete('/students/{id}', [StudentController::class, 'destroy']);
+
+// Route untuk menampilkan seluruh semua students
+Route::get('/students{id}', [StudentController::class, 'show']);
